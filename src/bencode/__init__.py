@@ -1,13 +1,13 @@
 from .decode import Decoder
 from .encode import Encoder
 
-def loads(s: bytes) -> dict:
+def loads(s):
     """Deserialize ``s`` (``bytes`` or ``bytearray`` instance
     containing a Bencoded document) to a Python object.
     """
     return Decoder(s).decode()
 
-def load(fp) -> dict:
+def load(fp):
     """Deserialize ``fp`` (a ``.read()``-supporting file-like object containing
     a Bencoded document) to a Python object.
     """
