@@ -14,11 +14,13 @@ python3 -m build && python3 -m pip install dist/bencode-0.0.1-py3-none-any.whl
 ### Reading bencoded data
 Both `load` and `loads` functions will decode bencoded data.
 ```python3
+import bencode
+
+decoded_dic = bencode.loads(encoded_data)
+
+# deserializing bencoded data from a file
 with open("bencoded_file.torrent", "rb") as fp:
     decoded_dic = bencode.load(fp)
-
-# or if you have encoded data in a variable
-decoded_dic = bencode.loads(encoded_data)
 
 
 ```
@@ -26,19 +28,19 @@ decoded_dic = bencode.loads(encoded_data)
 ### Encoding data
 Pragmatically, only dictionaries are encoded in real life applications of this encoding format, but any other supported types can be singularly encoded. 
 ```python3
+import bencode
+
 peers_dic = {b'peers': [
                 {b'127.0.0.1': b'29123'}, 
                 {b'127.0.0.1': b'6432'}
             ]}
 
-bencoded_peers = bencode.dumps(peers_dic)
 # b'd5:peersld9:127.0.0.15:29123ed9:127.0.0.14:6432eee'
+bencoded_peers = bencode.dumps(peers_dic)
 
-
-```
-Serialize an object as a bencoded stream to a file:
-```python3
+# serialize an object as a bencoded stream to a file:
 with open("my_bencoded_file.torrent", "rb") as fp:
     bencode.dump(my_dict, fp)
+
 
 ```
