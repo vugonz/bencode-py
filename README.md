@@ -40,7 +40,7 @@ bencoded_peers = bencode.dumps(peers_dic)
 
 # serialize an object as a bencoded stream to a file:
 with open("my_bencoded_file.torrent", "rb") as fp:
-    bencode.dump(my_dict, fp)
+    bencode.dump(peers_dic, fp)
 
 
 ```
