@@ -21,7 +21,6 @@ def dump(obj, fp):
     """Serialize ``obj`` as a Bencoded formatted stream to ``fp`` (a
     ``.write()``-supporting file-like object).
     """
-
     fp.write(Encoder().encode(obj))
 
 
