@@ -19,7 +19,7 @@ peers_dic = {b'peers': [
                 {b'127.0.0.1': b'6432'}
             ]}
 
-# this will result in b"d5:peersl9:127.0.0.15:29123 ...etc""
+# this will result in b"d5:peersld9:127.0.0.15:29123ee...etc"
 bencoded_peers = bencode.dumps(peers_dic)
 
 ```
