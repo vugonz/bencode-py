@@ -19,7 +19,6 @@ class Decoder:
     | dictionary    | dict              |
     +---------------+-------------------+
     """
-
     _TOKENS = {
         "int": b"i",
         "str": b"0123456789",
@@ -132,3 +131,4 @@ class Decoder:
             raise BencodeDecodingError(f"Unexpected token {self._current_byte()} at position {self._index}")
 
         return item
+

@@ -23,3 +23,4 @@ def dump(obj, fp):
     """
 
     fp.write(Encoder().encode(obj))
+

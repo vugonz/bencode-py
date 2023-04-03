@@ -17,8 +17,6 @@ class Encoder:
     | dict          | dictionary        |
     +---------------+-------------------+
     """
-
-
     def __init__(self):
         # No need for state (yet TM)
         ...
@@ -73,3 +71,4 @@ class Encoder:
         res += b'e'
 
         return bytes(res)
+
