@@ -8,6 +8,7 @@ class DecodeTest(unittest.TestCase):
     
     def test_simple_str(self):
         self.assertEqual(bencode.loads(b"2:hi"), b"hi", "Expected string: hi")
+
     def test_simple_dict(self):
         self.assertEqual(bencode.loads(b"d2:hii0ee"), {b"hi": 0}, "Expected dict with 'hi' string as key and 0 integer as value")
     

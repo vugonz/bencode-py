@@ -10,6 +10,7 @@ with open("bencoded_file.torrent", "rb") as fp:
 # or if you have encoded data in a variable
 decoded_dic = bencode.loads(encoded_data)
 
+
 ```
 
 Encoding data:
@@ -19,7 +20,9 @@ peers_dic = {b'peers': [
                 {b'127.0.0.1': b'6432'}
             ]}
 
-# this will result in b"d5:peersld9:127.0.0.15:29123ee...etc"
+# will result in the following bencoded bytes
+# b'd5:peersld9:127.0.0.15:29123ed9:127.0.0.14:6432eee'
 bencoded_peers = bencode.dumps(peers_dic)
+
 
 ```
