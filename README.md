@@ -1,13 +1,15 @@
 # Bencode
 
 ## Usage
+
+Reading bencoded data:
 ```python3
 import bencode
 
 with open("bencoded_file.torrent") as fp:
-    decoded_dic = bencode.decode(fp)
-```
+    decoded_dic = bencode.load(fp)
 
-```python3
-some_data = {}
+# or if you have encoded data in a variable
+
+decoded_dic = bencode.loads(encoded_data)
 ```
