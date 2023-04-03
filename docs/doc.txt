@@ -1,0 +1,22 @@
+NAME
+    bencode
+
+PACKAGE CONTENTS
+    decode
+    encode
+
+FUNCTIONS
+    dump(obj, fp)
+        Serialize ``obj`` as a Bencoded formatted stream to ``fp`` (a
+        ``.write()``-supporting file-like object).
+    
+    dumps(obj)
+        Serialize ``obj`` to a JSON formatted ``str``.
+    
+    load(fp) -> dict
+        Deserialize ``fp`` (a ``.read()``-supporting file-like object containing
+        a Bencoded document) to a Python object.
+    
+    loads(s: bytes) -> dict
+        Deserialize ``s`` (``bytes`` or ``bytearray`` instance
+        containing a Bencoded document) to a Python object.
