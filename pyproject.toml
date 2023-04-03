@@ -10,14 +10,16 @@ authors = [
 ]
 description = "A package to encode and decode bencoded data"
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
 [project.urls]
 "Homepage" = "https://github.com/vugonz/bencode"
 "Bug Tracker" = "https://github.com/vugonz/bencode/issues"
+"Source" = "https://github.com/vugonz/bencode/"
+
 
