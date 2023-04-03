@@ -15,7 +15,7 @@ class DecodeTest(unittest.TestCase):
         self.assertEqual(bencode.loads(b"di1ed4:eggs3:fooee"), {1: {b"eggs": b"foo"}}, "Should have a dict with one key '1' and another dict as value")
     
     def test_debian_iso(self):
-        with open("tests/pickles/debian.iso.torrent", "rb") as fp:
+        with open("tests/pickles/debian.iso.torrent.dat", "rb") as fp:
             debian_dic = pickle.load(fp)
         
         with open("tests/torrents/debian.iso.torrent", "rb") as fp:
