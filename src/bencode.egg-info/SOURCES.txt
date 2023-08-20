@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/bencode/__init__.py
+src/bencode/decode.py
+src/bencode/encode.py
+src/bencode.egg-info/PKG-INFO
+src/bencode.egg-info/SOURCES.txt
+src/bencode.egg-info/dependency_links.txt
+src/bencode.egg-info/top_level.txt
