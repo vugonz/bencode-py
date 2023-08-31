@@ -6,7 +6,7 @@ Bencode
 ## Installation
 Install it using `pip`.
 ```sh
-pip install bencode-vugz
+pip install bencode-vug
 ```
 
 ## Usage
