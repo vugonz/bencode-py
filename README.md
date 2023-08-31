@@ -4,9 +4,9 @@ A module that mimics the `json` standard lib module interface for
 Bencode
 
 ## Installation
-Simply clone the repository and then run the following on the root dir of the repo.
+Install it using `pip`.
 ```sh
-python3 -m build && python3 -m pip install dist/bencode-0.0.1-py3-none-any.whl
+pip install bencode-vugz
 ```
 
 ## Usage
