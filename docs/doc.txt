@@ -11,7 +11,7 @@ FUNCTIONS
         ``.write()``-supporting file-like object).
     
     dumps(obj)
-        Serialize ``obj`` to a JSON formatted ``str``.
+        Serialize ``obj`` to a Bencode formatted ``str``.
     
     load(fp) -> dict
         Deserialize ``fp`` (a ``.read()``-supporting file-like object containing

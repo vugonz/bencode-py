@@ -10,6 +10,8 @@ class Encoder:
     +===============+===================+
     | int           | integer           |
     +---------------+-------------------+
+    | str           | string            |
+    +---------------+-------------------+
     | bytes         | string            |
     +---------------+-------------------+
     | list          | list              |
@@ -17,10 +19,6 @@ class Encoder:
     | dict          | dictionary        |
     +---------------+-------------------+
     """
-    def __init__(self):
-        # No need for state (yet TM)
-        ...
-
     @classmethod
     def encode(cls, item) -> bytes:
         """ Encode passed item into corresponding Bencode type """
@@ -31,27 +29,33 @@ class Encoder:
         elif isinstance(item, int):
             ret = cls.encode_int(item)
         elif isinstance(item, bytes):
+            ret = cls.encode_byte_str(item)
+        elif isinstance(item, str):
             ret = cls.encode_str(item)
         else:
-            raise BencodeEncodingError(f"Unsupported type {type(item)}")
+            raise BencodeEncodingError(f'Unsupported type {type(item)}')
 
         return ret
 
     @classmethod
     def encode_int(cls, num: int) -> bytes:
         res = bytearray(b'i') 
-        res += bytes(str(num), "utf-8")
+        res += bytes(str(num), 'utf-8')
         res += b'e'
 
         return bytes(res)
 
     @classmethod
-    def encode_str(cls, string: str) -> bytes:
-        res = bytearray(bytes(str(len(string)), 'utf-8'))
-        res += b':'
-        res += string
+    def encode_byte_str(cls, string: bytes) -> bytes:
+        length = bytes(str(len(string)), 'utf-8')
 
-        return bytes(res)
+        return length + b":" + string 
+
+    @classmethod
+    def encode_str(cls, string: str) -> bytes:
+        length = bytes(str(len(string)), 'utf-8')
+
+        return length + b":" + bytes(string, 'utf-8') 
 
     @classmethod
     def encode_list(cls, lst: list) -> bytes:
@@ -71,6 +75,5 @@ class Encoder:
         res += b'e'
 
         return bytes(res)
-
 
 
