@@ -14,11 +14,11 @@ def load(fp):
     return Decoder(fp.read()).decode()
 
 def dumps(obj):
-    """Serialize ``obj`` to a JSON formatted ``str``."""
+    """Serialize ``obj`` to a Bencode formatted ``str``."""
     return Encoder().encode(obj)
 
 def dump(obj, fp):
-    """Serialize ``obj`` as a Bencoded formatted stream to ``fp`` (a
+    """Serialize ``obj`` as a Bencode formatted stream to ``fp`` (a
     ``.write()``-supporting file-like object).
     """
     fp.write(Encoder().encode(obj))
