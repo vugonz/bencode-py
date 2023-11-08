@@ -1,5 +1,6 @@
 from .decode import Decoder
 from .encode import Encoder
+from .decode import BencodeDecodingError
 
 def loads(s):
     """Deserialize ``s`` (``bytes`` or ``bytearray`` instance
